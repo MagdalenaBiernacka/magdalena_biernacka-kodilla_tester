@@ -31,6 +31,7 @@ public class UsersRegister {
         }
 
     }
+
     private static int sumUp(int a, int b) {
         int result = a + b;
         return result;
