@@ -24,7 +24,7 @@ public class UsersRegister {
         }
         Average = sumAge / users.length;
 
-        for(int userIndex = 0; userIndex < users.length; userIndex++) {
+        for (int userIndex = 0; userIndex < users.length; userIndex++) {
             if (users[userIndex].age < Average) {
                 System.out.println(users[userIndex].name);
             }
