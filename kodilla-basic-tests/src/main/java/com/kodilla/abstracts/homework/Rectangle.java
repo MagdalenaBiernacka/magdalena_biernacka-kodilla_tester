@@ -4,7 +4,7 @@ public class Rectangle extends Shape {
     double sideOne;
     double sideTwo;
 
-    public Rectangle(double sideOne, double sideTwo){
+    public Rectangle(double sideOne, double sideTwo) {
         super();
         this.sideOne = sideOne;
         this.sideTwo = sideTwo;
@@ -12,11 +12,11 @@ public class Rectangle extends Shape {
 
     @Override
     public double shapeArea() {
-        return sideOne*sideTwo;
+        return sideOne * sideTwo;
     }
 
     @Override
     public double shapePerimeter() {
-        return 2*(sideOne+sideTwo);
+        return 2 * (sideOne + sideTwo);
     }
 }

@@ -7,7 +7,6 @@ public class Triangle extends Shape {
     double sideTwo;
     double base;
 
-
     public Triangle(double height, double sideOne, double sideTwo, double base) {
         super();
         this.height = height;
@@ -18,11 +17,11 @@ public class Triangle extends Shape {
 
     @Override
     public double shapeArea() {
-        return (this.base*this.height)/2;
+        return (this.base * this.height) / 2;
     }
 
     @Override
     public double shapePerimeter() {
-        return this.sideOne+this.sideTwo+this.base;
+        return this.sideOne + this.sideTwo + this.base;
     }
 }
