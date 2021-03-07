@@ -4,14 +4,15 @@ import java.util.Random;
 import java.util.stream.Stream;
 
 public class RandomNumbers {
-    private List<Integer> drawnNumbers = new ArrayList<>();
+//    private List<Integer> drawnNumbers = new ArrayList<>();
+
+    private int max = 0;
+    private int min = 100;
 
     public static void main(String[] args) {
         RandomNumbers randomNumbers = new RandomNumbers();
         randomNumbers.getCountOfRandomNumber();
 
-      System.out.println(randomNumbers.getMAx());
-        System.out.println(randomNumbers.getMin());
     }
 
     public int getCountOfRandomNumber() {
@@ -21,28 +22,37 @@ public class RandomNumbers {
 
         while (sumOfNumbers < 5000) {
             int temp = random.nextInt(31);
-            drawnNumbers.add(temp);
+//            drawnNumbers.add(temp);
+            System.out.println(temp);
+            getMAx(temp);
+            getMin(temp);
             sumOfNumbers = sumOfNumbers + temp;
             result++;
         }
+        System.out.println("Wartość max " + max);
+        System.out.println("Wartość min " + min);
         return result;
     }
-    public int getMAx() {
-        int max = drawnNumbers.get(0);
-        for (int numberIndex = 0; numberIndex < drawnNumbers.size(); numberIndex++) {
-            if (drawnNumbers.get(numberIndex) > max) {
-                max = drawnNumbers.get(numberIndex);
-            }
-        }
-        return max;
+
+    public void getMAx(int number) {
+//        int max = drawnNumbers.get(0);
+//        for (int numberIndex = 0; numberIndex < drawnNumbers.size(); numberIndex++) {
+//            if (drawnNumbers.get(numberIndex) > max) {
+//                max = drawnNumbers.get(numberIndex);
+//            }
+//        }
+//        return max;
+        if (number > max) max = number;
     }
-    public int getMin() {
-        int min = drawnNumbers.get(0);
-        for (int numberIndex = 0; numberIndex <drawnNumbers.size(); numberIndex++) {
-            if (drawnNumbers.get(numberIndex) < min) {
-                min = drawnNumbers.get(numberIndex);
-            }
-        }
-        return min;
+
+    public void getMin(int number) {
+//        int min = drawnNumbers.get(0);
+//        for (int numberIndex = 0; numberIndex <drawnNumbers.size(); numberIndex++) {
+//            if (drawnNumbers.get(numberIndex) < min) {
+//                min = drawnNumbers.get(numberIndex);
+//            }
+//        }
+//        return min;
+        if (number < min) min = number;
     }
 }

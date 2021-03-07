@@ -15,10 +15,6 @@ public class OperatingSystem {
         System.out.println("Turn off");
     }
 
-    public int getCreationYear() {
-        return creationYear;
-    }
-
     public void displayYear() {
         System.out.println("Creation year: " + creationYear);
     }
