@@ -7,14 +7,14 @@ public class GraphicDesigner extends Job {
         super(salary, responsibilities);
     }
 
-    public double salary() {
-        double salary = 8000;
+    @Override
+    public double getSalary() {
         System.out.println("Salary: " + salary + "pln per month");
         return salary;
     }
 
-    public String responsibilities() {
-        String responsibilities = "creating graphic designs for printing, checking and approval of projects for printing";
+    @Override
+    public String getResponsibilities() {
         System.out.println("Responsibilities: " + responsibilities);
         return responsibilities;
     }

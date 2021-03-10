@@ -28,7 +28,7 @@ public class CalculatorTestSuite {
     public void testPower() {
         Calculator calculator = new Calculator();
         int a = 10;
-        int powerResult = calculator.power(a);
+        double powerResult = calculator.power(a);
         assertEquals(100, powerResult);
     }
 
@@ -36,7 +36,7 @@ public class CalculatorTestSuite {
     public void testPowerForNegativeNumbers() {
         Calculator calculator = new Calculator();
         int a = -2;
-        int powerResult = calculator.power(a);
+        double powerResult = calculator.power(a);
         assertEquals(4, powerResult);
     }
 
@@ -44,7 +44,7 @@ public class CalculatorTestSuite {
     public void testPowerForZero() {
         Calculator calculator = new Calculator();
         int a = 0;
-        int powerResult = calculator.power(a);
+        double powerResult = calculator.power(a);
         assertEquals(0, powerResult);
     }
 }

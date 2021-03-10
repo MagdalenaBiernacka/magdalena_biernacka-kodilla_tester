@@ -6,14 +6,14 @@ public class Printer extends Job {
         super(salary, responsibilities);
     }
 
-    public double salary() {
-        double salary = 4000;
+    @Override
+    public double getSalary() {
         System.out.println("Salary: " + salary + "pln per month");
         return salary;
     }
 
-    public String responsibilities() {
-        String responsibilities = "support for the production process, printing";
+    @Override
+    public String getResponsibilities() {
         System.out.println("Responsibilities: " + responsibilities);
         return responsibilities;
     }

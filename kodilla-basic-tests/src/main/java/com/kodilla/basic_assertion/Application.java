@@ -7,7 +7,7 @@ public class Application {
         int b = 8;
         int sumResult = calculator.sum(a, b);
         int subResult = calculator.subtract(a, b);
-        int powerResult = calculator.power(a);
+        double powerResult = calculator.power(a);
 
         boolean correctSum = ResultChecker.assertEquals(13, sumResult);
         if (correctSum) {
@@ -23,7 +23,7 @@ public class Application {
             System.out.println("Metoda subtract nie działa poprawnie dla liczb " + a + " i " + b);
         }
 
-        boolean correctPower = ResultChecker.assertEquals(25, powerResult);
+        boolean correctPower = ResultChecker.assertEquals(25, (int) powerResult);
         if (correctPower) {
             System.out.println("Metoda power działa poprawnie dla liczby " + a);
         } else {
