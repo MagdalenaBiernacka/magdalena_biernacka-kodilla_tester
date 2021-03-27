@@ -73,7 +73,7 @@ public class CashMachineTestSuite {
     static Stream<Arguments> testWithdrawals() {
         return Stream.of(
                 Arguments.of(0, new int[]{}),  // przypadek przy braku tranzakcji
-                Arguments.of(1, new int[]{-100}), // przypadek z jedną tranzkacją
+                Arguments.of(1, new int[]{-100}), // przypadek z jedną tranzakcją
                 Arguments.of(1, new int[]{-200, 100}), //przypadek z jedną wypłatą i wpłatą
                 Arguments.of(2, new int[]{-100, 0, 100, -200, 1000}) //przypadek z różnymi wpłatami i wypłatami
         );
@@ -110,7 +110,7 @@ public class CashMachineTestSuite {
     static Stream<Arguments> countsNumberOfDeposits() {
         return Stream.of(
                 Arguments.of(0, new int[]{}),  // przypadek przy braku tranzakcji
-                Arguments.of(1, new int[]{100}), // przypadek z jedną tranzkacją
+                Arguments.of(1, new int[]{100}), // przypadek z jedną wpłatą
                 Arguments.of(1, new int[]{-200, 100}), //przypadek z jedną wypłatą i wpłatą
                 Arguments.of(2, new int[]{-100, 0, 100, -200, 1000}) //przypadek z różnymi wpłatami i wypłatami
         );
@@ -134,7 +134,7 @@ public class CashMachineTestSuite {
         return Stream.of(
                 Arguments.of(0, new int[]{}),  // przypadek przy braku tranzakcji
                 Arguments.of(0, new int[]{100}), // przypadek z jedną wpłatą
-                Arguments.of(-100, new int[]{-100}), // przypadek z jedną tranzkacją
+                Arguments.of(-100, new int[]{-100}), // przypadek z jedną wypłatą
                 Arguments.of(-200, new int[]{-200, 100}), //przypadek z jedną wypłatą i wpłatą
                 Arguments.of(-150, new int[]{-100, 0, 100, -200, 1000}) //przypadek z różnymi wpłatami i wypłatami
         );
@@ -158,7 +158,7 @@ public class CashMachineTestSuite {
         return Stream.of(
                 Arguments.of(0, new int[]{}),  // przypadek przy braku tranzakcji
                 Arguments.of(100, new int[]{100}), // przypadek z jedną wpłatą
-                Arguments.of(0, new int[]{-100}), // przypadek z jedną tranzkacją
+                Arguments.of(0, new int[]{-100}), // przypadek z jedną qyołatą
                 Arguments.of(300, new int[]{-200, 300}), //przypadek z jedną wypłatą i wpłatą
                 Arguments.of(1000, new int[]{-100, 0, 1000, -200, 1000}) //przypadek z różnymi wpłatami i wypłatami
         );
