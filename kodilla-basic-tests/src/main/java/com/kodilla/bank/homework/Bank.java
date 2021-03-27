@@ -1,45 +1,44 @@
 package com.kodilla.bank.homework;
 
-public class Bank {
-    private CashMachine[] cashMachines;
-    private int numberOfCashMachines;
+import java.util.Arrays;
 
-    public Bank() {
-        this.cashMachines = new CashMachine[0];
-        this.numberOfCashMachines = 0;
-    }
+public class Bank {
+    private CashMachine[] cashMachines = new CashMachine[0];
 
     public void addNewCashMachine(CashMachine newCashMachine) {
-        this.numberOfCashMachines++;
-        CashMachine[] newTab = new CashMachine[this.numberOfCashMachines];
+        CashMachine[] newTab = new CashMachine[cashMachines.length + 1];
         System.arraycopy(cashMachines, 0, newTab, 0, cashMachines.length);
-        newTab[this.numberOfCashMachines - 1] = newCashMachine;
-        this.cashMachines= newTab;
+        newTab[newTab.length - 1] = newCashMachine;
+        this.cashMachines = newTab;
     }
 
-    public double getTotalBalance() {
-        if (this.cashMachines.length == 0) {
-            return 0;
-        }
-        double  sum = 0;
-        for(int CashMachineNumber = 0; CashMachineNumber  < this.cashMachines.length; CashMachineNumber ++)
-            sum += this.cashMachines[CashMachineNumber].getActualBalance();
-        return sum;
+    public double getBalance() {
+        return Arrays.stream(cashMachines)
+                .mapToDouble(CashMachine::getBalance)
+                .sum();
     }
 
-    public int getTotalNumberOfWithdrawals() {
-        return 10;
+    public long getTotalNumberOfWithdrawals() {
+        return Arrays.stream(cashMachines)
+                .mapToLong(CashMachine::getNumberOfWithdrawals)
+                .sum();
     }
 
-    public int getTotalNumberOfDeposits() {
-        return 12;
+    public long getTotalNumberOfDeposits() {
+        return Arrays.stream(cashMachines)
+                .mapToLong(CashMachine::getNumberOfDeposits)
+                .sum();
     }
 
     public double getAverageOfWithdrawals() {
-        return 10;
+        return Arrays.stream(cashMachines)
+                .mapToDouble(CashMachine::getAverageWithdrawals)
+                .sum();
     }
 
-    public double getAverageOfDeposits(){
-        return 5;
+    public double getAverageOfDeposits() {
+        return Arrays.stream(cashMachines)
+                .mapToDouble(CashMachine::getAverageDeposits)
+                .sum();
     }
 }

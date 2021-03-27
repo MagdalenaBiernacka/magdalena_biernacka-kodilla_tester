@@ -1,25 +1,16 @@
 package com.kodilla.bank.homework;
 
+import java.util.Arrays;
+import java.util.function.IntPredicate;
+
 public class CashMachine {
 
-    private int[] completedTransactions;
-    private int numberOfTransaction;
-    private int balance;
-
-
-
-    public CashMachine() {
-        this.completedTransactions = new int[0];
-        this.numberOfTransaction = 0;
-        this.balance = 0;
-
-    }
+    private int[] completedTransactions = new int[0];
 
     public void addCompletedTransaction(int amount) {
-        this.numberOfTransaction++;
-        int[] newTab = new int[this.numberOfTransaction];
+        int[] newTab = new int[completedTransactions.length + 1];
         System.arraycopy(completedTransactions, 0, newTab, 0, completedTransactions.length);
-        newTab[this.numberOfTransaction - 1] = amount;
+        newTab[newTab.length - 1] = amount;
         this.completedTransactions = newTab;
     }
 
@@ -27,14 +18,39 @@ public class CashMachine {
         return completedTransactions;
     }
 
-    public double getActualBalance() {
-        if (this.completedTransactions.length == 0) {
-            return 0;
-        }
-        return this.balance;
+    public double getBalance() {
+        return Arrays.stream(completedTransactions)
+                .sum();
     }
 
     public int getNumberOfTransaction() {
-        return numberOfTransaction;
+        return completedTransactions.length;
+    }
+
+    public long getNumberOfWithdrawals() {
+        return Arrays.stream(completedTransactions)
+                .filter(Transaction::isWithdrawal) // dwa :: podają referencję do funkcji
+                .count();
+    }
+
+    public long getNumberOfDeposits() {
+        IntPredicate isDeposits = (int transaction) -> transaction > 0;
+        return Arrays.stream(completedTransactions)
+                .filter(isDeposits)
+                .count();
+    }
+
+    public double getAverageWithdrawals() {
+        return Arrays.stream(completedTransactions)
+                .filter(Transaction::isWithdrawal)
+                .average()
+                .orElse(0);
+    }
+
+    public double getAverageDeposits() {
+        return Arrays.stream(completedTransactions)
+                .filter(Transaction::isDeposit)
+                .average()
+                .orElse(0);
     }
 }
