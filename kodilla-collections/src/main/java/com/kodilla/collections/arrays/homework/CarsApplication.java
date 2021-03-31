@@ -35,5 +35,4 @@ public class CarsApplication {
         else
             return new Mercedes(a, b);
     }
-
 }
