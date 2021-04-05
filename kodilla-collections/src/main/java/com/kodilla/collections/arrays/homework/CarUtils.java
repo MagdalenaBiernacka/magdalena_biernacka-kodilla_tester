@@ -8,6 +8,8 @@ import com.kodilla.collections.interfaces.homework.Opel;
 public class CarUtils {
 
     public static void describeCar(Car car) {
+        car.increaseSpeed();
+        car.decreaseSpeed();
         System.out.println("-----------------------------");
         System.out.println("Car name: " + getCarName(car));
         System.out.println("Car speed: " + car.getSpeed());

@@ -33,8 +33,6 @@ public class CarsApplication {
     public static void displayCarData(Car[] cars) {
         for (Car car: cars) {
             car = drawCar();
-            car.increaseSpeed();
-            car.decreaseSpeed();
             CarUtils.describeCar(car);
         }
     }
