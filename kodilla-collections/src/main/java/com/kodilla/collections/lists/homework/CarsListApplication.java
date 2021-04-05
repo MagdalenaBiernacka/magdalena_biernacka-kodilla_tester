@@ -21,9 +21,9 @@ public class CarsListApplication {
         cars.remove(1);
         cars.remove(opel);
 
-       describe(cars);
-       System.out.println("Po usunięciu dwóch samochodów pozostało: " + cars.size());
-        }
+        System.out.println("Po usunięciu dwóch samochodów pozostało: " + cars.size());
+        describe(cars);
+    }
 
     private static void describe(List<Opel> cars) {
         for (Opel car : cars) {
