@@ -16,7 +16,7 @@ public class SchoolDirectory {
         school.put(createPrincipal("Adam Xiński"), createSchool("Trójka", 30, 30, 30, 30));
 
         for (Map.Entry<Principal, School> principalSchoolEntry : school.entrySet())
-            System.out.println("Dyrektor szkoły - " + principalSchoolEntry.getValue().getSchoolName() + " Pan/Pani " + principalSchoolEntry.getKey().getFullName() + ", liczba uczniów: " +
+            System.out.println("Szkoła: " + principalSchoolEntry.getValue().getSchoolName() + " / Dyrektor: " + principalSchoolEntry.getKey().getFullName() + ", liczba uczniów: " +
                     principalSchoolEntry.getValue().getStudentsNumber());
     }
 }

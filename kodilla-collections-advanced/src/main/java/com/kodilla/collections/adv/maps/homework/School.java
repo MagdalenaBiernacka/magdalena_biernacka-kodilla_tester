@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class School {
+
     String schoolName;
 
-    private List<Integer> studentsNumber = new ArrayList<>();
+    List<Integer> studentsNumber = new ArrayList<>();
 
     public School(String schoolName, int... studentsNumber) {
         this.schoolName = schoolName;
@@ -18,7 +19,7 @@ public class School {
         return schoolName;
     }
 
-    public double getStudentsNumber() {
+    public int getStudentsNumber() {
         return studentsNumber.stream()
                 .mapToInt(Integer::intValue)
                 .sum();
