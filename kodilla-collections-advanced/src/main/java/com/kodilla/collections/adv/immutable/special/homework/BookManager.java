@@ -9,11 +9,9 @@ public class BookManager {
 
     public static Book createBook(String title, String author) {
         Book newBook = new Book(title, author);
+        System.out.println("Przed dodaniem do Seta" + newBook.hashCode());
         books.add(newBook);
+        books.forEach(book -> System.out.println(book.hashCode()));
         return newBook;
-    }
-
-    public static Set<Book> getBooks() {
-        return books;
     }
 }
