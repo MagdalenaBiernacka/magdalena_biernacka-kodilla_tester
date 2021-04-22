@@ -15,10 +15,6 @@ public class EnglishWord {
         return partOfSpeech;
     }
 
-    public String getWord() {
-        return word;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
