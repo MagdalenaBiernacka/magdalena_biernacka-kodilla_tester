@@ -1,6 +1,7 @@
 package com.kodilla.collections.adv.exercises.homework;
 
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -36,10 +37,21 @@ class FlightFinderTestSuite {
 //        departure.add(new Flight("Warsaw",  "Berlin" ));
 //        assertEquals(departure, flightsFrom);
     }
+    @AfterEach
+    public void close() {
+        flightRepository.clearList();
+    }
 
     @Test
     public void isFlightTo() {
-        //Given
+        // Given
+        flightRepository.addFlight("Warsaw", "Paris");
+        flightRepository.addFlight("Warsaw", "Berlin");
+        flightRepository.addFlight("Berlin", "Warsaw");
+        flightRepository.addFlight("Paris", "Berlin");
+        flightRepository.addFlight("Tenerife", "London");
+        flightRepository.addFlight("Berlin", "Tenerife");
+        //When
         List<Flight> flightsTo = flightFinder.findFlightsTo("Berlin");
         //Then
         assertEquals(2, flightsTo.size());
