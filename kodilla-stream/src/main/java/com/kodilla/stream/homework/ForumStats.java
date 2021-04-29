@@ -5,7 +5,6 @@ import com.kodilla.stream.UsersRepository;
 public class ForumStats {
     public static void main(String[] args) {
         double avgForMoreThen40 = UsersRepository.getUsersList()
-
                 .stream()
                 .filter(user -> user.getAge()>= 40)
                 .map(user -> user.getNumberOfPost())
