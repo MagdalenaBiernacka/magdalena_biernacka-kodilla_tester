@@ -1,5 +1,6 @@
 package com.kodilla.parametrized_tests.homework;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EmptySource;
 import org.junit.jupiter.params.provider.NullSource;
@@ -9,7 +10,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class UserValidatorTestSuite {
 
-    UserValidator userValidator = new UserValidator();
+    UserValidator userValidator;
+
+    @BeforeEach
+    public void setup() {userValidator = new UserValidator();}
 
     @ParameterizedTest
     @ValueSource(strings = {"abc", "name", "NamE", "4us.er", "-3USER", "B01"})
