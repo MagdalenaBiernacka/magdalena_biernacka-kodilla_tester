@@ -13,8 +13,8 @@ class AirportRepositoryTestSuite {
    }
 
    @Test
-   public void testIsAirportInUse_withException() throws AirportNotFoundException {
+   public void testIsAirportInUse_withException(){
       assertThrows(AirportNotFoundException.class,
-              () -> {airportRepository.isAirportInUse("Vienna");});
+              () -> airportRepository.isAirportInUse("Vienna"));
    }
 }

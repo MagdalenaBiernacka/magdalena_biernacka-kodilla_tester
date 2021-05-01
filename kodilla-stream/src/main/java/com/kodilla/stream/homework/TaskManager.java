@@ -6,11 +6,15 @@ import java.util.stream.Collectors;
 
 public class TaskManager {
     public static void main(String[] args) {
-        List<LocalDate> deadlines = TaskRepository.getTasks()
+        TaskManager taskManager = new TaskManager();
+        System.out.println(taskManager.getDeadlines());
+    }
+
+    public List<LocalDate> getDeadlines() {
+        return TaskRepository.getTasks()
                 .stream()
                 .filter(task -> task.getDeadline().isAfter(LocalDate.now()))
                 .map(task -> task.getDeadline())
                 .collect(Collectors.toList());
-        System.out.println(deadlines);
     }
 }

@@ -16,7 +16,7 @@ public class WarehouseApp {
         try {
             Order order = warehouse.getOrder("1");
             System.out.println("Order: " + order);
-        } catch (OrderDoesntExistException exception) {
+        } catch (Exception exception) {
             System.out.println("Sorry, this order can not be found.");
         } finally {
             System.out.println("OK");
