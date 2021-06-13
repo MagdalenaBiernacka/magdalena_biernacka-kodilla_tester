@@ -1,20 +1,30 @@
 package com.kodilla.execution_model.homework;
 
 
+import lombok.extern.java.Log;
+
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+@Log
 public class Shop {
     private Set<Order> orders = new HashSet<>();
     LocalDate startDate = LocalDate.now();
     LocalDate endDate = LocalDate.now();
 
     public void addOrder(Order order) {
-        if (order.getValue() > 0 && (order.getOrderTime().isBefore(endDate) || order.getOrderTime().isEqual(endDate))) {
+        if (order.getValue() > 0) {
+            verifyOrderAndAddToList(order);
+        } else log.warning("Order incorect");
+    }
+
+    private void verifyOrderAndAddToList(Order order) {
+        if ((order.getOrderTime().isBefore(endDate) || order.getOrderTime().isEqual(endDate))) {
             this.orders.add(order);
-            if (this.startDate.isAfter(order.getOrderTime())) this.startDate = order.getOrderTime();
+        } else {
+           log.info("Order wasn't added");
         }
     }
 
