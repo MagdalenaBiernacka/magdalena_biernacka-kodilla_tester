@@ -53,7 +53,6 @@ class ShopTestSuite {
         ordersFromDataToData.add(firstOrder);
         ordersFromDataToData.add(secondOrder);
         ordersFromDataToData.add(thirdOrder);
-        ordersFromDataToData.add(fifthOrder);
 
         //When
         int filteredOrdersByDate = shop.getOrdersFromDataToData(LocalDate.of(2021, 04, 15),
